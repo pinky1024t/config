@@ -27,8 +27,8 @@ And make symlink.
 
 ```bash
 mkdir dotfiles_backup
-mv .config/bash/.bash* dotfiles_backup
-mv .config/bash/.zsh* dotfiles_backup
+mv ~/.bash* dotfiles_backup
+mv ~/.zsh* dotfiles_backup
 ln -s .config/bash/.bash* -t $HOME/
 ln -s .config/zsh/.zshenv -t $HOME/
 ```
