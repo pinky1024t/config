@@ -4,6 +4,11 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+## Create XDG Base Directory
+[[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
+[[ ! -d $XDG_DATA_HOME ]] && mkdir $XDG_DATA_HOME
+[[ ! -d $XDG_STATE_HOME ]] && mkdir $XDG_STATE_HOME
+
 ## alias
 [[ -f $XDG_CONFIG_HOME/bash/alias.sh ]] && source $XDG_CONFIG_HOME/bash/alias.sh
 

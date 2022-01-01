@@ -9,6 +9,11 @@ else
     DIST=""
 fi
 
+## Create XDG Base Directory
+[[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
+[[ ! -d $XDG_DATA_HOME ]] && mkdir $XDG_DATA_HOME
+[[ ! -d $XDG_STATE_HOME ]] && mkdir $XDG_STATE_HOME
+
 ## source grml .zshrc if distribution is not Arch Linux
 if [[ $DIST != "Arch" ]]; then
     [[ $XDG_CONFIG_HOME/zsh/grml/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/grml/.zshrc
