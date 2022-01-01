@@ -2,6 +2,18 @@
 # ${XDG_CONFIG_HOME}/zsh/.zshrc
 #
 
+## identify distribution name
+if [[ -f /etc/issue ]]; then
+    DIST=$(cat /etc/issue | sed -z 's/ .*//; s/\n//g')
+else
+    DIST=""
+fi
+
+## source grml .zshrc if distribution is not Arch Linux
+if [[ $DIST != "Arch" ]]; then
+    [[ $XDG_CONFIG_HOME/zsh/grml/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/grml/.zshrc
+fi
+
 ## alias
 ### source alias for bash
 [[ -f $XDG_CONFIG_HOME/bash/alias.sh ]] && source $XDG_CONFIG_HOME/bash/alias.sh
@@ -16,7 +28,6 @@ zle -N expand-alias
 bindkey -M main ' ' expand-alias
 
 ## prompt theme
-DIST=$(cat /etc/issue | sed -z 's/ .*//; s/\n//g')
 if [[ $DIST=="Arch" ]]; then
     [[ -f $XDG_CONFIG_HOME/zsh/prompt/arch.zsh ]] && source $XDG_CONFIG_HOME/zsh/prompt/arch.zsh
 elif [[ $DIST=="Ubuntu" ]]; then
