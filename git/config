@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = false
+	ignorecase = false
+	quotepath = false
+[color]
+	ui = true

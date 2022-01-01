@@ -1,0 +1,13 @@
+#
+# .gitignore for XDG_CONFIG_HOME
+#
+# ignore all sub directory
+/*/
+# define apps to manage by git
+!/bash/
+!/git/
+!/neofetch/
+!/screen/
+!/vim/
+!/wget/
+!/zsh/
