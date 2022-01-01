@@ -4,6 +4,13 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+## identify distribution name
+if [[ -f /etc/issue ]]; then
+    DIST=$(cat /etc/issue | sed -z 's/ .*//; s/\n//g')
+else
+    DIST=""
+fi
+
 ## Create XDG Base Directory
 [[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
 [[ ! -d $XDG_DATA_HOME ]] && mkdir $XDG_DATA_HOME
@@ -13,10 +20,9 @@
 [[ -f $XDG_CONFIG_HOME/bash/alias.sh ]] && source $XDG_CONFIG_HOME/bash/alias.sh
 
 ## prompt
-DIST=$(cat /etc/issue | sed -z 's/ .*//; s/\n//g')
-if [[ $DIST=="Arch" ]]; then
+if [[ "$DIST" == "Arch" ]]; then
     [[ -f $XDG_CONFIG_HOME/bash/prompt/arch.sh ]] && source $XDG_CONFIG_HOME/bash/prompt/arch.sh
-elif [[ $DIST=="Ubuntu" ]]; then
+elif [[ "$DIST" == "Ubuntu" ]]; then
     [[ -f $XDG_CONFIG_HOME/bash/prompt/ubuntu.sh ]] && source $XDG_CONFIG_HOME/bash/prompt/ubuntu.sh
 fi
 

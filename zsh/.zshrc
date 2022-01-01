@@ -15,7 +15,7 @@ fi
 [[ ! -d $XDG_STATE_HOME ]] && mkdir $XDG_STATE_HOME
 
 ## source grml .zshrc if distribution is not Arch Linux
-if [[ $DIST != "Arch" ]]; then
+if [[ "$DIST" != "Arch" ]]; then
     [[ $XDG_CONFIG_HOME/zsh/grml/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/grml/.zshrc
 fi
 
@@ -33,9 +33,9 @@ zle -N expand-alias
 bindkey -M main ' ' expand-alias
 
 ## prompt theme
-if [[ $DIST=="Arch" ]]; then
+if [[ "$DIST" == "Arch" ]]; then
     [[ -f $XDG_CONFIG_HOME/zsh/prompt/arch.zsh ]] && source $XDG_CONFIG_HOME/zsh/prompt/arch.zsh
-elif [[ $DIST=="Ubuntu" ]]; then
+elif [[ "$DIST" == "Ubuntu" ]]; then
     [[ -f $XDG_CONFIG_HOME/zsh/prompt/ubuntu.zsh ]] && source $XDG_CONFIG_HOME/zsh/prompt/ubuntu.zsh
 fi
 
