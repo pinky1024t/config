@@ -12,3 +12,4 @@
 !/wget/
 !/zsh/
 /zsh/.zdirs
+/zsh/.zcompdump
