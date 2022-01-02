@@ -1,6 +1,6 @@
 # Custom Prompt Theme for Zsh
 ## import git-prompt.sh
-source /usr/share/git/git-prompt.sh
+[[ -f /usr/share/git/git-prompt.sh ]] && source /usr/share/git/git-prompt.sh || source $XDG_CONFIG_HOME/bash/prompt/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM=1
 GIT_PS1_SHOWUNTRACKEDFILES=
