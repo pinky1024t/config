@@ -11,6 +11,11 @@ else
     DIST=""
 fi
 
+## if $DIST is Ubuntu, use Ubuntu's default .bashrc
+if [[ "$DIST" == "Ubuntu" ]]; then
+    [[ -f $XDG_CONFIG_HOME/bash/ubuntu_default_rc.sh ]] && source $XDG_CONFIG_HOME/bash/ubuntu_default_rc.sh
+fi
+
 ## Create XDG Base Directory
 [[ ! -d $XDG_CACHE_HOME ]] && mkdir $XDG_CACHE_HOME
 [[ ! -d $XDG_DATA_HOME ]] && mkdir $XDG_DATA_HOME
