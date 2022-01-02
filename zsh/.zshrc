@@ -16,7 +16,7 @@ fi
 
 ## source grml .zshrc if distribution is not Arch Linux
 if [[ "$DIST" != "Arch" ]]; then
-    [[ $XDG_CONFIG_HOME/zsh/grml/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/grml/.zshrc
+    [[ -f $XDG_CONFIG_HOME/zsh/grml/.zshrc ]] && source $XDG_CONFIG_HOME/zsh/grml/.zshrc
 fi
 
 ## alias
