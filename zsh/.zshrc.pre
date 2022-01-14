@@ -1,0 +1,7 @@
+# Define Environment Variables for grml's zshrc
+## compdump
+export GRML_COMP_CACHE_DIR=$XDG_CACHE_HOME/zsh/
+export COMPDUMPFILE=$XDG_CACHE_HOME/zsh/.zcompdump
+## dirstack
+export DIRSTACKFILE=$XDG_STATE_HOME/zsh/zdirs
+export DIRSTACKSIZE=1000
