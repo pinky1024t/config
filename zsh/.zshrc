@@ -44,11 +44,10 @@ fi
 export HISTFILE=$XDG_STATE_HOME/zsh/.zsh_history
 export HISTSIZE=9000
 setopt share_history
-setopt hist_ignore_all_dups
+# setopt hist_ignore_all_dups
 setopt hist_ignore_dups
 setopt hist_no_store
 setopt hist_reduce_blanks
-setopt share_history
 setopt append_history
 setopt inc_append_history
 

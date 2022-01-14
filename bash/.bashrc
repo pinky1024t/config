@@ -37,5 +37,6 @@ export HISTFILE=$XDG_STATE_HOME/bash/.bash_history
 export HISTSIZE=9000
 export HISTCONTROL=ignoreboth
 export HISTIGNORE=ls:history
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M '
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 shopt -u histappend
