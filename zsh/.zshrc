@@ -57,3 +57,9 @@ compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 ## environment variables
 [[ -f $XDG_CONFIG_HOME/bash/env.sh ]] && source $XDG_CONFIG_HOME/bash/env.sh
+
+## fzf
+source $XDG_CONFIG_HOME/zsh/fzf.zsh
+
+## completion
+source $XDG_CONFIG_HOME/zsh/completion.zsh
